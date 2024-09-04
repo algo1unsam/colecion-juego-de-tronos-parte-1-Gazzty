@@ -1,7 +1,6 @@
 object daenerys{
 	var cant_artefactos = 2
 	const property artefactos = []
-	const casa = rocadragon
 	const property historial_artefactos = []
 
 	method encontrar(_art){
@@ -14,18 +13,19 @@ object daenerys{
 		}
 	}
 	method dejar_rocadragon(){
-		casa.guardar_artefacto(artefactos)
+		rocadragon.guardar_artefacto(artefactos)
 		artefactos.clear()
 	}
 
 	// Ver todos los objetos en la rocadragon y en inventario
 	method artefactos_all(){
-		return casa.artefactos() + artefactos
+		return rocadragon.artefactos() + artefactos
 	}
 	// Ver artefacto en especifico sin importar donde este
 	method buscar_artefacto(art){
-		return casa.artefactos().filter{x=>x==art} + artefactos.filter{x=>x==art}
-	}
+		return self.artefactos_all().filter {x=>x==art}
+		//return self.artefactos_all().contains(art)
+	}	
 }
 
 object espada_dragon{}
