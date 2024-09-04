@@ -4,7 +4,7 @@ object daenerys{
 	const casa = rocadragon
 	const property historial_artefactos = []
 
-	method agregar_artefacto(_art){
+	method encontrar(_art){
 		// Se agrega al historial
 		historial_artefactos.add(_art)
 		if(artefactos.size() < cant_artefactos){
